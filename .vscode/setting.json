@@ -1,0 +1,16 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[toml]": {
+    "editor.defaultFormatter": "be5invis.toml"
+  },
+  "gopls": {
+    "experimentalWorkspaceModule": true
+  },
+  "go.useLanguageServer": true,
+  "go.inferGopath": false,
+  "go.toolsGopath": "/root/go",
+  "[ini]": {
+    "editor.defaultFormatter": "lkrms.inifmt"
+  },
+  "editor.tabSize": 2
+}
