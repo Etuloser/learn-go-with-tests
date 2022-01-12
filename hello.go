@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
-func main() {
-	fmt.Println("Just for test")
+func Hello(name string) string {
+	return "Just for test " + name
 }
