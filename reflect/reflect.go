@@ -11,6 +11,8 @@ type Dog struct{}
 
 var Animal interface{}
 
+var intPtr *int
+
 func main() {
 	typeOfA := reflect.TypeOf(a)
 	typeOfDog := reflect.TypeOf(Dog{})
@@ -24,5 +26,9 @@ func main() {
 	Animal = dog
 
 	fmt.Println(reflect.TypeOf(Animal).Kind())
-
+	var i int = 10
+	intPtr = &i
+	v := reflect.ValueOf(intPtr)
+	k := v.Kind()
+	fmt.Println(v, k)
 }
