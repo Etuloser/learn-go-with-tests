@@ -1,9 +1,7 @@
-github.com/Etuloser/ego v0.0.0-20220209113300-aeefa2cd9542 h1:tKKyZuQKSWPQ5vm1wfxXcat3/V/o30/Bz+0bJJxFsrM=
-github.com/Etuloser/ego v0.0.0-20220209113300-aeefa2cd9542/go.mod h1:n8xxf4f5sE9AMk5Ys4bzKnK2mF8YjcxZVQ11b44BJ98=
 github.com/Etuloser/ego v0.0.0-20220210082804-a7d3d013f3fe h1:zFJ9HnezZPUjZ9y7PGESM/LlroHay/dI6DDDGAnS4Sw=
 github.com/Etuloser/ego v0.0.0-20220210082804-a7d3d013f3fe/go.mod h1:8//9vyqOJh33BItJMqYTRB+wABrnyFZ7kzlRpVKd0Yo=
-github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
 github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
