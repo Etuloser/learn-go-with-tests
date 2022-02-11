@@ -1,6 +1,8 @@
 package main
 
-func main() {
-	InitDB()
+import "github.com/Etuloser/ego/pkg/gdbc"
 
+func main() {
+	gdbc.InitDB()
+	gdbc.RawQuery()
 }

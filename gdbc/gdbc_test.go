@@ -1,12 +1,20 @@
 package gdbc
 
 import (
+	"os"
+	"path/filepath"
 	"testing"
 )
 
 func TestInitDB(t *testing.T) {
-	InitDB()
+	wd, _ := os.Getwd()
+	iniFilePath := filepath.Join(wd, "../my.ini")
+	InitDB(iniFilePath)
 }
-func TestRawQuery(t *testing.T) {
-	InitDB()
+
+func TestExample(t *testing.T) {
+	ExampleSearch()
+	ExampleAdd()
+	ExampleUpdate()
+	ExampleDel()
 }

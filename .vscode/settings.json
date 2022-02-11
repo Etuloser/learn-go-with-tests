@@ -12,5 +12,6 @@
   "[ini]": {
     "editor.defaultFormatter": "lkrms.inifmt"
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "go.testFlags": ["-v"]
 }
