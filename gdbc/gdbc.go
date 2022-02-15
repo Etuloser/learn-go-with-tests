@@ -6,7 +6,6 @@ import (
 	"log"
 	"time"
 
-	"github.com/Etuloser/ego/pkg/ereflect"
 	_ "github.com/go-sql-driver/mysql"
 	"gopkg.in/ini.v1"
 )
@@ -26,8 +25,8 @@ type DatabaseSetting struct {
 func InitDB(iniFilePath string) {
 	cfg, err := ini.Load(iniFilePath)
 
-	if !ereflect.IsNil(err) {
-		log.Fatal(err.Error())
+	if err != nil {
+		panic(err)
 	}
 
 	dbSetting := new(DatabaseSetting)
@@ -42,7 +41,7 @@ func InitDB(iniFilePath string) {
 		dbSetting.Database,
 		dbSetting.Charset)
 	MysqlDB, MysqlErr = sql.Open("mysql", dsn)
-	if !ereflect.IsNil(MysqlErr) {
+	if MysqlErr != nil {
 		log.Println("dsn: " + dsn)
 		panic("数据源配制不正确: " + MysqlErr.Error())
 	}
