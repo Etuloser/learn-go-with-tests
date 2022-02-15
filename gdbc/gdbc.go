@@ -4,8 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
-	"path/filepath"
 	"time"
 
 	"github.com/Etuloser/ego/pkg/ereflect"
@@ -23,11 +21,6 @@ type DatabaseSetting struct {
 	Port     string
 	Database string
 	Charset  string
-}
-type Subnet struct {
-	Id     int64  `db:"id"`
-	Subent string `db:"网段"`
-	Mask   string `db:"掩码"`
 }
 
 func InitDB(iniFilePath string) {
@@ -64,49 +57,18 @@ func InitDB(iniFilePath string) {
 		panic("数据库链接失败: " + MysqlErr.Error())
 	}
 }
-func setup() {
-	wd, _ := os.Getwd()
-	iniFilePath := filepath.Join(wd, "../my.ini")
-	InitDB(iniFilePath)
-}
 
-func ExampleSearch() {
-	setup()
-	subnet := new(Subnet)
-	rows := MysqlDB.QueryRow("select id,subnet,mask from subnets")
-	if err := rows.Scan(&subnet.Id, &subnet.Subent, &subnet.Mask); err != nil {
-		fmt.Printf("scan failed, err:%v", err)
+func RawQuery(rawSql string) {
+	rows, _ := MysqlDB.Query("select * from subents")
+	if rows == nil {
 		return
 	}
-	fmt.Println(subnet.Id, subnet.Subent, subnet.Mask)
-}
-func ExampleAdd() {
-	setup()
-	ret, err := MysqlDB.Exec("insert into subnets(subnet,mask) value(?,?)", "12556", "16")
-	if err != nil {
-		log.Fatal(err.Error())
+	id := 0
+	subnet := ""
+	fmt.Println(rows)
+	fmt.Println(rows)
+	for rows.Next() {
+		rows.Scan(&id, &subnet)
+		fmt.Println(id, subnet)
 	}
-
-	//插入数据的主键id
-	lastInsertID, _ := ret.LastInsertId()
-	fmt.Println("LastInsertID:", lastInsertID)
-
-	//影响行数
-	rowsaffected, _ := ret.RowsAffected()
-	fmt.Println("RowsAffected:", rowsaffected)
-}
-func ExampleUpdate() {
-
-	ret, _ := MysqlDB.Exec("UPDATE subnets set subnet=? where id=?", "100", 1)
-	upd_nums, _ := ret.RowsAffected()
-
-	fmt.Println("RowsAffected:", upd_nums)
-}
-
-func ExampleDel() {
-
-	ret, _ := MysqlDB.Exec("delete from subnets where id=?", 1)
-	del_nums, _ := ret.RowsAffected()
-
-	fmt.Println("RowsAffected:", del_nums)
 }

@@ -1,4 +1,4 @@
-module github.com/Etuloser/learn-go-with-tests
+module etests
 
 go 1.17
 
