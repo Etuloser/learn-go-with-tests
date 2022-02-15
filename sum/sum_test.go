@@ -47,9 +47,10 @@ func TestSumAllTails(t *testing.T) {
 
 func TestArr(t *testing.T) {
 	t.Run("测试数组特性", func(t *testing.T) {
-		got := []string
-		if got != nil {
-			t.Errorf("数组的默认值不为nil")
+		arr := [...]string{"a", "b", "c"}
+		got := reflect.TypeOf(arr).Kind()
+		if !reflect.DeepEqual(got, reflect.Array) {
+			t.Errorf("got %v want %v", got, reflect.Array)
 		}
 	})
 }

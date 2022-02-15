@@ -1,8 +1,10 @@
 package gorm
 
 import (
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
+	"os"
+	"path/filepath"
+
+	"gopkg.in/ini.v1"
 )
 
 type DatabaseSetting struct {
@@ -17,11 +19,14 @@ type DatabaseSetting struct {
 func setup() {
 	wd, _ := os.Getwd()
 	iniFilePath := filepath.Join(wd, "../my.ini")
+	cfg, err := ini.Load(iniFilePath)
+	if err != nil {
+		panic(err)
+	}
+	databaseSetting := new(DatabaseSetting)
+	cfg.Section("mysql").MapTo(databaseSetting)
 }
 
-
 func InitDB() {
-
-	db,err = gorm.Open(0
-	)
+	setup()
 }
