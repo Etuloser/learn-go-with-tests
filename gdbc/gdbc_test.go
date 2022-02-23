@@ -11,10 +11,3 @@ func TestInitDB(t *testing.T) {
 	iniFilePath := filepath.Join(wd, "../my.ini")
 	InitDB(iniFilePath)
 }
-
-func TestExample(t *testing.T) {
-	ExampleSearch()
-	ExampleAdd()
-	ExampleUpdate()
-	ExampleDel()
-}

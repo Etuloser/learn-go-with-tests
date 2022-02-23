@@ -6,7 +6,7 @@
   "gopls": {
     "experimentalWorkspaceModule": true
   },
-  "go.useLanguageServer": false,
+  "go.useLanguageServer": true,
   "go.inferGopath": false,
   "go.toolsGopath": "/root/go",
   "[ini]": {
