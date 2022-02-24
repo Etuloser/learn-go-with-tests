@@ -1,6 +1,9 @@
 package shapes
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestPerimeter(t *testing.T) {
 	rectangle := Rectangle{10.0, 10.0}
@@ -31,4 +34,14 @@ func TestArea(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestSetValue(t *testing.T) {
+	trapezoid := Trapezoid{
+		Top:    10,
+		Bottom: 20,
+		Height: 10,
+	}
+	trapezoid.Bottom = 30
+	fmt.Println(trapezoid.Bottom)
 }
